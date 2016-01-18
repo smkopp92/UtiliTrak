@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <%@bills.each do |bill|%>
+    <a href="/bills/<%= bill.id %>"><%= bill.amount %></a></li>
+    <%= link_to 'Delete Bill', household_bill_path(@household,bill.id), data: { confirm: 'Are you sure?' }, method: :delete %>
+    <%= link_to 'Edit Bill', edit_household_bill_path(@household,bill.id) %>
+  <%end%>
+  <%= link_to 'Add a Bill', new_household_bill_path(@household)%>
+<%else%>
+  <h2>Need to be signed in to see your bills!</h2>
+<%end%>

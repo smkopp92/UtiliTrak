@@ -11,4 +11,10 @@ FactoryGirl.define do
     zip "12345"
     user
   end
+  factory :bill do
+    household
+    amount 123.00
+    date '12/12/2015'
+    kind 'electricity'
+  end
 end

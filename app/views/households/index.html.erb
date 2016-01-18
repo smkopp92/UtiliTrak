@@ -1,9 +1,10 @@
 <% if user_signed_in? %>
   <%@households.each do |household|%>
-    <%= household.address%>
+    <a href="/households/<%= household.id %>"><%= household.address %></a></li>
     <%= link_to 'Delete Household', household_path(household.id), data: { confirm: 'Are you sure?' }, method: :delete %>
     <%= link_to 'Edit Household', edit_household_path(household.id) %>
   <%end%>
+  <%= link_to 'Add a Household', new_household_path%>
 <%else%>
   <h2>Need to be signed in to see your houses!</h2>
 <%end%>
