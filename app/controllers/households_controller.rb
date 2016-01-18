@@ -8,7 +8,7 @@ class HouseholdsController < ApplicationController
     @user = current_user
     @household = Household.new
   end
-  
+
   def create
     @user = current_user
     @household = Household.new(household_params)
