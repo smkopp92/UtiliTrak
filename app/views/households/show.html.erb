@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <%@bills.each do |bill|%>
-    <a href="/bills/<%= bill.id %>"><%= bill.amount %></a></li>
+    <a href="/households/<%= @household.id %>/bills/<%=bill.id%>"><%= bill.amount %></a></li>
     <%= link_to 'Delete Bill', household_bill_path(@household,bill.id), data: { confirm: 'Are you sure?' }, method: :delete %>
     <%= link_to 'Edit Bill', edit_household_bill_path(@household,bill.id) %>
   <%end%>

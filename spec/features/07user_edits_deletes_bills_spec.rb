@@ -2,17 +2,17 @@
 # I want to edit my utility bills
 # So that I can update any incorrect information
 # Acceptance Criteria
-# []I must fill out all the information correctly
-# []I should be redirected to show page after submitting form
-# []Incorrect information should raise an error and refresh page
+# [x]I must fill out all the information correctly
+# [x]I should be redirected to show page after submitting form
+# [x]Incorrect information should raise an error and refresh page
 #
 # As an authenticated user
 # I want to delete my utility bills
 # So that my information cannot be accessed
 # Acceptance Criteria
-# []Each show page should have a delete button
-# []Deleting should prompt the user to confirm deletion
-# []Deleting should return the user to the index page
+# [x]Each show page should have a delete button
+# [x]Deleting should prompt the user to confirm deletion
+# [x]Deleting should return the user to the index page
 
 require 'rails_helper'
 

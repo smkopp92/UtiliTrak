@@ -5,7 +5,7 @@ FactoryGirl.define do
     password "password"
   end
   factory :household do
-    address "12 Summer Dr."
+    sequence(:address) { |n| "#{n} Summer Dr." }
     city "Boston"
     state "MA"
     zip "12345"
@@ -13,8 +13,14 @@ FactoryGirl.define do
   end
   factory :bill do
     household
-    amount 123.00
-    date '12/12/2015'
-    kind 'electricity'
+    sequence(:amount) { |n| n }
+    date "12/12/2015"
+    kind "electricity"
+  end
+  factory :utilitydata do
+    sequence(:amount) { |n| 100 + n }
+    date "12/12/2015"
+    state "MA"
+    kind "electricity"
   end
 end
