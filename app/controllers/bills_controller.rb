@@ -44,6 +44,14 @@ class BillsController < ApplicationController
     redirect_to household_path(@household)
   end
 
+  def show
+    @user = current_user
+    @household = Household.find(params[:household_id])
+    @bill = Bill.find(params[:id])
+    @data = Utilitydata.where(state: @household.state, kind: @bill.kind,
+                              date: @bill.date).first
+  end
+
   private
 
   def bill_params
