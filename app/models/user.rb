@@ -5,5 +5,8 @@ class User < ActiveRecord::Base
     :rememberable,
     :trackable,
     :validatable
+
+  has_many :households
+
   validates :username, presence: true
 end
