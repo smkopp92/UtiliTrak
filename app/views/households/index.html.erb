@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <%@households.each do |household|%>
+    <%=household.address%>
+  <%end%>
+<% else %>
+  <h2>Need to be signed in to see your houses!</h2>
+<%end%>
