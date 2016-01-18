@@ -44,6 +44,12 @@ class HouseholdsController < ApplicationController
     redirect_to households_path
   end
 
+  def show
+    @user = current_user
+    @household = Household.find(params[:id])
+    @bills = Bill.where(household: @household)
+  end
+
   private
 
   def household_params

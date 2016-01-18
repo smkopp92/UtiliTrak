@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :households
+  resources :households do
+    resources :bills
+  end
   root 'households#index'
 end

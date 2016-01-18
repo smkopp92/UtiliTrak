@@ -2,9 +2,9 @@
 # I want to update a household
 # So that I can keep my information up to data
 # Acceptance Criteria
-# []I must fill out all the information correctly
-# []I should be redirected to show page after submitting form
-# []Incorrect information should raise an error and refresh page
+# [x]I must fill out all the information correctly
+# [x]I should be redirected to show page after submitting form
+# [x]Incorrect information should raise an error and refresh page
 #
 # As an authenticated user
 # I want to delete my household
