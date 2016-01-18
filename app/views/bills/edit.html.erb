@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <h1>This is where we'll update a bill</h1>
+
+  <%= form_for [@household, @bill] do |f| %>
+    <%= f.label :amount %>
+    <%= f.text_field :amount, value: @bill.amount %>
+      <br>
+    <%= f.label :date %>
+    <%= f.text_field :date, value: @bill.date %>
+      <br>
+    <%= f.label :kind %>
+    <%= f.text_field :kind, value: @bill.kind %>
+      <br>
+    <%= f.submit "Update Bill" %>
+  <% end %>
+
+  <%= link_to "Back to Home Page", root_path %>
+<% else %>
+  <h2>Need to be signed in to update bill!</h2>
+<% end %>
