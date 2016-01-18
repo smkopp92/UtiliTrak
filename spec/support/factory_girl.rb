@@ -18,7 +18,7 @@ FactoryGirl.define do
     kind "electricity"
   end
   factory :utilitydata do
-    sequence(:amount) { |n| 100+n }
+    sequence(:amount) { |n| 100 + n }
     date "12/12/2015"
     state "MA"
     kind "electricity"
