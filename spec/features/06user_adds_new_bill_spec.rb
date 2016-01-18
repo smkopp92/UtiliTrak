@@ -2,13 +2,13 @@
 # I want to create a utility bill
 # So that I can compare my information with the database
 # Acceptance Criteria
-# []I must fill out all the information correctly
-# []I should be redirected to show page after submitting form
-# []Incorrect information should raise an error and refresh page
+# [x]I must fill out all the information correctly
+# [x]I should be redirected to show page after submitting form
+# [x]Incorrect information should raise an error and refresh page
 
 require 'spec_helper'
 
-feature 'user sees a list of their households and adds households' do
+feature 'user adds a bill to a specific household' do
   before(:each) do
     @user = FactoryGirl.create(:user)
     @household = FactoryGirl.create(:household, user_id: @user.id)

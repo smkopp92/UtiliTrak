@@ -19,6 +19,31 @@ class BillsController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    @household = Household.find(params[:household_id])
+    @bill = Bill.find(params[:id])
+  end
+
+  def update
+    @user = current_user
+    @household = Household.find(params[:household_id])
+    @bill = Bill.find(params[:id])
+    if @bill.update(bill_params)
+      flash[:notice] = "Bill updated successfully"
+      redirect_to household_path(@household)
+    else
+      flash[:errors] = @bill.errors.full_messages.join(". ")
+      render :edit
+    end
+  end
+
+  def destroy
+    @household = Household.find(params[:household_id])
+    Bill.find(params[:id]).destroy
+    redirect_to household_path(@household)
+  end
+
   private
 
   def bill_params
