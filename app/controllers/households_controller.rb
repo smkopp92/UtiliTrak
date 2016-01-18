@@ -22,6 +22,28 @@ class HouseholdsController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    @household = Household.find(params[:id])
+  end
+
+  def update
+    @user = current_user
+    @household = Household.find(params[:id])
+    if @household.update(household_params)
+      flash[:notice] = "Household updated successfully"
+      redirect_to households_path
+    else
+      flash[:errors] = @household.errors.full_messages.join(". ")
+      render :edit
+    end
+  end
+
+  def destroy
+    Household.find(params[:id]).destroy
+    redirect_to households_path
+  end
+
   private
 
   def household_params

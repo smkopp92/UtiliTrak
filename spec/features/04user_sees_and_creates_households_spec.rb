@@ -2,16 +2,16 @@
 # I want to see a list of my households
 # So that I can access specific information for each location
 # Acceptance Criteria
-# []The index page should have a list of households
-# []Each element should be a link to the show page
+# [x]The index page should have a list of households
+# [x]Each element should be a link to the show page
 #
 # As an authenticated user
 # I want to add a household
 # So that I can keep track of all my bills
 # Acceptance Criteria
-# []I must fill out all the information correctly
-# []I should be redirected to show page after submitting form
-# []Incorrect information should raise an error and refresh page
+# [x]I must fill out all the information correctly
+# [x]I should be redirected to show page after submitting form
+# [x]Incorrect information should raise an error and refresh page
 require 'spec_helper'
 
 feature 'user sees a list of their households and adds households' do
@@ -36,6 +36,15 @@ feature 'user sees a list of their households and adds households' do
     fill_in 'Zip', with: '01234'
     click_on 'Create Household'
     expect(page).to have_content('123 Main Street')
+  end
+
+  scenario 'user adds incorrect information to household' do
+    visit new_household_path
+    fill_in 'City', with: 'New York'
+    fill_in 'State', with: 'NY', match: :prefer_exact
+    fill_in 'Zip', with: '01234'
+    click_on 'Create Household'
+    expect(page).to have_content("be blank")
   end
 
   scenario 'unauthenticated user adding household' do
