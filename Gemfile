@@ -21,4 +21,9 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
+end
+
+group :test do
+  gem 'coveralls', require: false
 end
