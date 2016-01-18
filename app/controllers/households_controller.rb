@@ -3,13 +3,12 @@ class HouseholdsController < ApplicationController
     @user = current_user
     @households = Household.where(user: @user)
   end
-  def show
 
-  end
   def new
     @user = current_user
     @household = Household.new
   end
+  
   def create
     @user = current_user
     @household = Household.new(household_params)
@@ -22,6 +21,7 @@ class HouseholdsController < ApplicationController
       render :new
     end
   end
+
   private
 
   def household_params
