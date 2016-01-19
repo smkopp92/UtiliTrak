@@ -18,7 +18,7 @@
 @import url(https://fonts.googleapis.com/css?family=Mako);
 
 a {
-  color: #FFE5AA;
+  color: $ll-gold;
 }
 
 p {
@@ -28,11 +28,11 @@ p {
 .back-1 {
   background-image: url("images.fineartamerica.com/images-medium-large/blue-city-david-lee-thompson.jpg");
   background-size: cover;
+  border-left: 0;
+  border-right: 0;
   height: auto;
   margin-left: 0;
   margin-right: 0;
-  border-left: 0;
-  border-right: 0;
 }
 
 .font-white {
@@ -41,16 +41,16 @@ p {
 }
 
 .pad-vert {
+  border-left: 0;
+  border-right: 0;
   height: auto;
   margin-left: 0;
   margin-right: 0;
-  border-left: 0;
-  border-right: 0;
   padding: 100px;
 }
 
 .font-blue {
-  color: #37becc;
+  color: $blue;
 }
 
 .center {
