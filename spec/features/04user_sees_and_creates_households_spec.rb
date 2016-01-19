@@ -56,6 +56,6 @@ feature 'user sees a list of their households and adds households' do
   scenario 'unauthenticated user seeing households' do
     click_link "Sign Out"
     visit households_path
-    expect(page).to have_content('Need to be signed in to see your houses!')
+    expect(page).to have_content('Live Smart')
   end
 end

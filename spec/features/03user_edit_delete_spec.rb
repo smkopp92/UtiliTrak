@@ -7,7 +7,7 @@ feature 'user edits/deletes info' do
   before(:each) do
     user1 = FactoryGirl.create(:user)
     visit root_path
-    click_link 'Sign In'
+    first(:link, 'Sign In').click
     fill_in 'Email', with: user1.email
     fill_in 'Password', with: user1.password, match: :prefer_exact
     click_on 'Log in'

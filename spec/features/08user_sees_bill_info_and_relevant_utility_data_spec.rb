@@ -2,15 +2,15 @@
 # I want to see a list of utility bills
 # So that I can track my progress over the course of time
 # Acceptance Criteria
-# []The household show page should have a list of bills
-# []Each element should be a link to the show page
+# [x]The household show page should have a list of bills
+# [x]Each element should be a link to the show page
 #
 # As an authenticated user
 # I want to see a utility bill
 # So that I can see how energy conscious I am
 # Acceptance Criteria
-# []The show page should have all relevant information for that bill
-# []The show page should have a comparison of relevant utility data
+# [x]The show page should have all relevant information for that bill
+# [x]The show page should have a comparison of relevant utility data
 feature 'user sees relevant bill information' do
   before(:each) do
     @user = FactoryGirl.create(:user)

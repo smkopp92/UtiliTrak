@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :bills
   end
   root 'households#index'
+  resources :home, only: [:index]
 end
