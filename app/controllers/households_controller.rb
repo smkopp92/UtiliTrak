@@ -1,7 +1,11 @@
 class HouseholdsController < ApplicationController
   def index
-    @user = current_user
-    @households = Household.where(user: @user)
+    if user_signed_in?
+      @user = current_user
+      @households = Household.where(user: @user)
+    else
+      redirect_to home_index_path
+    end
   end
 
   def new

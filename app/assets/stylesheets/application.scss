@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+require foundation_and_overrides
+
+ */
+@import "colors";
+@import url(https://fonts.googleapis.com/css?family=Mako);
+
+a {
+  color: #FFE5AA;
+}
+
+p {
+  display: inline;
+}
+
+.back-1 {
+   background-image: url('http://images.fineartamerica.com/images-medium-large/blue-city-david-lee-thompson.jpg');
+   background-size: cover;
+   height: auto !important;
+   margin-left: 0px;
+   margin-right: 0px;
+}
+
+.font-white {
+  color: $ll-gold;
+  text-shadow: -1px 0 $dd-orange, 0 1px $dd-orange, 1px 0 $dd-orange, 0 -1px $dd-orange;
+}
+
+.pad-vert{
+  height: auto !important;
+  padding: 100px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.font-blue{
+  color: #37becc;
+}
+
+.center{
+  text-align: center;
+}
+
+.button{
+  margin: 20px;
+  background-color: $l-gold
+}

@@ -50,6 +50,10 @@ class BillsController < ApplicationController
     @bill = Bill.find(params[:id])
     @data = Utilitydata.where(state: @household.state, kind: @bill.kind,
                               date: @bill.date).first
+    if @data == nil
+      @data = Utilitydata.new(state: @household.state, kind: @bill.kind,
+                              date: @bill.date, amount: 10000000)
+    end
   end
 
   private
