@@ -8,7 +8,7 @@ feature 'sign in and sign out' do
   scenario 'user signs in with email and password' do
     user1 = FactoryGirl.create(:user)
     visit root_path
-    click_link 'Sign In'
+    first(:link, 'Sign In').click
     fill_in 'Email', with: user1.email
     fill_in 'Password', with: user1.password, match: :prefer_exact
     click_on 'Log in'
@@ -20,7 +20,7 @@ feature 'sign in and sign out' do
   scenario 'user unsuccessfully signs in' do
     visit root_path
     user2 = FactoryGirl.create(:user)
-    click_link 'Sign In'
+    first(:link, 'Sign In').click
     fill_in 'Email', with: user2.email
     fill_in 'Password', with: 'passwordwrong', match: :prefer_exact
     click_on 'Log in'
@@ -30,7 +30,7 @@ feature 'sign in and sign out' do
   scenario 'signed in user signs out' do
     user3 = FactoryGirl.create(:user)
     visit root_path
-    click_link 'Sign In'
+    first(:link, 'Sign In').click
     fill_in 'Email', with: user3.email
     fill_in 'Password', with: user3.password, match: :prefer_exact
     click_on 'Log in'
