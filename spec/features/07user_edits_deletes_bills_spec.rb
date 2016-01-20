@@ -43,7 +43,7 @@ feature 'user may edit and delete their own bills' do
 
     click_on "Edit Bill"
     fill_in 'Amount', with: "10000000"
-    click_button "Update Bill"
+    click_button "Generate Bill"
 
     find_by_id("bill#{@bill.id}").click
 

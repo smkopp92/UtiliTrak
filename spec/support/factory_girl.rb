@@ -15,12 +15,12 @@ FactoryGirl.define do
     household
     sequence(:amount) { |n| n }
     date "12/12/2015"
-    kind "electricity"
+    kind "Electric"
   end
   factory :utilitydata do
     sequence(:amount) { |n| 100 + n }
     date "12/12/2015"
     state "MA"
-    kind "electricity"
+    kind "Electric"
   end
 end

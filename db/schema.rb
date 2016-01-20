@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118212316) do
+ActiveRecord::Schema.define(version: 20160120205643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160118212316) do
     t.date    "date",         null: false
     t.string  "kind",         null: false
   end
+
+  add_index "bills", ["kind", "date"], name: "index_bills_on_kind_and_date", unique: true, using: :btree
 
   create_table "households", force: :cascade do |t|
     t.string  "address",               null: false

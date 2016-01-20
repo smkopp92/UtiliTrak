@@ -15,8 +15,9 @@ feature 'user sees relevant bill information' do
   before(:each) do
     @user = FactoryGirl.create(:user)
     @household = FactoryGirl.create(:household, user_id: @user.id)
-    @bill1 = FactoryGirl.create(:bill, household_id: @household.id)
-    @bill2 = FactoryGirl.create(:bill, household_id: @household.id)
+    @hid = @household.id
+    @bill1 = FactoryGirl.create(:bill, household_id: @hid)
+    @bill2 = FactoryGirl.create(:bill, household_id: @hid, kind: "Water")
     @data = FactoryGirl.create(:utilitydata)
     visit new_user_session_path
     fill_in 'Email', with: @user.email
