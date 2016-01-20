@@ -26,26 +26,26 @@ feature 'user sees relevant bill information' do
   scenario 'user is able to see a list of bills for a household' do
     visit households_path
 
-    click_on @household.address
+    find_by_id("house#{@household.id}").click
 
-    expect(page).to have_content(@bill1.amount)
-    expect(page).to have_content(@bill2.amount)
+    expect(page).to have_content(@bill1.date)
+    expect(page).to have_content(@bill2.date)
   end
   scenario 'user clicks on a bill to see bill specific data' do
     visit households_path
 
-    click_on @household.address
+    find_by_id("house#{@household.id}").click
 
-    click_on @bill1.amount
+    find_by_id("bill#{@bill1.id}").click
 
     expect(page).to have_content(@bill1.amount)
   end
   scenario 'Relevant data shows on show page for bill' do
     visit households_path
 
-    click_on @household.address
+    find_by_id("house#{@household.id}").click
 
-    click_on @bill1.amount
+    find_by_id("bill#{@bill1.id}").click
 
     expect(page).to have_content(@data.amount)
   end

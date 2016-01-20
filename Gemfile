@@ -11,6 +11,9 @@ gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foundation-rails', '5.5.3.2'
 gem 'devise'
+gem 'highcharts-rails'
+gem 'lazy_high_charts'
+gem 'turbolinks'
 
 group :development, :test do
   gem 'pry-rails'

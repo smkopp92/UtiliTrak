@@ -1,8 +1,16 @@
 <% if user_signed_in? %>
-  <%@bills.each do |bill|%>
-    <a href="/households/<%= @household.id %>/bills/<%=bill.id%>"><%= bill.amount %></a></li>
-    <%= link_to 'Delete Bill', household_bill_path(@household,bill.id), data: { confirm: 'Are you sure?' }, method: :delete %>
-    <%= link_to 'Edit Bill', edit_household_bill_path(@household,bill.id) %>
+  <%@bills.each_with_index do |bill, i|%>
+    <div class="bill-list">
+      <ul>
+        <li><%=i+1%>.</li>
+        <li><a href="/households/<%= @household.id %>/bills/<%=bill.id%>" id="bill<%=bill.id%>">
+          <%= image_tag "dollar.png"%>
+        </a></li>
+        <li>Date: <%= bill.date %></li>
+        <li><%= link_to 'Delete Bill', household_bill_path(@household,bill.id), data: { confirm: 'Are you sure?' }, method: :delete %></li>
+        <li><%= link_to 'Edit Bill', edit_household_bill_path(@household,bill.id) %></li>
+      </ul>
+    </div>
   <%end%>
   <%= link_to 'Add a Bill', new_household_bill_path(@household)%>
 <%else%>
