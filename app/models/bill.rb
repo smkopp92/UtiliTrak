@@ -4,6 +4,6 @@ class Bill < ActiveRecord::Base
   validates :amount, presence: true
   validates :date, presence: true
   validates :kind, presence: true
-  validates :kind, inclusion: {in: ["Electric", "Gas", "Water"]}
-  validates :kind, uniqueness: {scope: :date}
+  validates :kind, inclusion: { in: ["Electric", "Gas", "Water"] }
+  validates :kind, uniqueness: { scope: :date }
 end

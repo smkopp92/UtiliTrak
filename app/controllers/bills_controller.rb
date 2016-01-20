@@ -3,7 +3,7 @@ class BillsController < ApplicationController
     @user = current_user
     @household = Household.find(params[:household_id])
     @bill = Bill.new
-    @kinds = ["Electric"] #Gas, Water next
+    @kinds = ["Electric"] # Gas, Water next
   end
 
   def create
@@ -11,7 +11,7 @@ class BillsController < ApplicationController
     @household = Household.find(params[:household_id])
     @bill = Bill.new(bill_params)
     @bill.household = @household
-    @kinds = ["Electric"] #Gas, Water next
+    @kinds = ["Electric"] # Gas, Water next
     if @bill.save
       @bill.update(date: "#{@bill.date.year}/#{@bill.date.month}/1")
       flash[:notice] = "Bill Created Successfully"
@@ -26,14 +26,14 @@ class BillsController < ApplicationController
     @user = current_user
     @household = Household.find(params[:household_id])
     @bill = Bill.find(params[:id])
-    @kinds = ["Electric"] #Gas, Water next
+    @kinds = ["Electric"] # Gas, Water next
   end
 
   def update
     @user = current_user
     @household = Household.find(params[:household_id])
     @bill = Bill.find(params[:id])
-    @kinds = ["Electric"] #Gas, Water next
+    @kinds = ["Electric"] # Gas, Water next
     if @bill.update(bill_params)
       @bill.update(date: "#{@bill.date.year}/#{@bill.date.month}/1")
       flash[:notice] = "Bill updated successfully"
