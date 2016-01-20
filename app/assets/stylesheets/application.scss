@@ -26,7 +26,7 @@ p {
 }
 
 .back-1 {
-  background-image: url("images.fineartamerica.com/images-medium-large/blue-city-david-lee-thompson.jpg");
+  background-image: image-url("city.jpg");
   background-size: cover;
   border-left: 0;
   border-right: 0;
@@ -60,4 +60,18 @@ p {
 .button {
   background-color: $l-gold;
   margin: 20px;
+}
+
+.house-list ul li {
+  display: inline;
+  padding-right: 10px;
+}
+
+.bill-list ul li {
+  display: inline;
+  padding-right: 10px;
+}
+
+body {
+  background-color: $ll-blue;
 }

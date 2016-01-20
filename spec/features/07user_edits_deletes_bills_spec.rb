@@ -26,24 +26,26 @@ feature 'user may edit and delete their own bills' do
     fill_in 'Password', with: @user.password, match: :prefer_exact
     click_on 'Log in'
   end
-  scenario 'user is able to delete households' do
+  scenario 'user is able to delete bills' do
     visit households_path
 
-    click_on @household.address
+    find_by_id("house#{@household.id}").click
 
     click_on "Delete Bill"
 
     expect(page).to_not have_content(@bill.amount)
   end
 
-  scenario 'user is able to edit households they created' do
+  scenario 'user is able to edit bills they created' do
     visit households_path
 
-    click_on @household.address
+    find_by_id("house#{@household.id}").click
 
     click_on "Edit Bill"
     fill_in 'Amount', with: "10000000"
     click_button "Update Bill"
+
+    find_by_id("bill#{@bill.id}").click
 
     expect(page).to have_content("10000000")
   end

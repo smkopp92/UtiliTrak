@@ -20,14 +20,14 @@ feature 'user adds a bill to a specific household' do
   scenario 'user creates a bill for a household' do
 
     visit households_path
-    click_on @household.address
+    find_by_id("house#{@household.id}").click
     click_on 'Add a Bill'
     fill_in 'Amount', with: '123.00'
     fill_in 'Date', with: '12/12/2015'
     fill_in 'Kind', with: 'electricity'
     click_on 'Generate Bill'
 
-    expect(page).to have_content('123')
+    expect(page).to have_content('2015-12-12')
   end
 
   scenario 'user adds incorrect information to bill' do

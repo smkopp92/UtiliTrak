@@ -1,10 +1,29 @@
 <% if user_signed_in? %>
-  <%@households.each do |household|%>
-    <a href="/households/<%= household.id %>"><%= household.address %></a></li>
-    <%= link_to 'Delete Household', household_path(household.id), data: { confirm: 'Are you sure?' }, method: :delete %>
-    <%= link_to 'Edit Household', edit_household_path(household.id) %>
+  <h1><%=current_user.username%>'s Households<h1>
+  <%@households.each_with_index do |household,i|%>
+    <div class="house-list">
+      <ul>
+        <li><%=i+1%>.</li>
+        <li><a href="/households/<%= household.id %>" id="house<%=household.id%>">
+          <%= image_tag "house.png"%>
+        </a></li>
+        <li>Address: <%= household.address %></li>
+        <li><%= link_to 'Delete Household', household_path(household.id), data: { confirm: 'Are you sure?' }, method: :delete %></li>
+        <li><%= link_to 'Edit Household', edit_household_path(household.id) %></li>
+      </ul>
+    </div>
   <%end%>
   <%= link_to 'Add a Household', new_household_path%>
 <%else%>
-  <h2>Need to be signed in to see your houses!</h2>
+  <h2>Need to be signed in to see your households!</h2>
 <%end%>
+<!-- <img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="original">
+<img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="saturate" class="saturate">
+<img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="grayscale" class="grayscale">
+<img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="contrast" class="contrast">
+<img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="brightness" class="brightness">
+<img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="blur" class="blur">
+<img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="invert" class="invert">
+<img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="sepia" class="sepia">
+<img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="huerotate" class="huerotate">
+<img alt="Mona Lisa" src="http://i.stack.imgur.com/OyP0g.jpg" title="opacity" class="rss opacity"> -->
