@@ -23,11 +23,11 @@ feature 'user adds a bill to a specific household' do
     find_by_id("house#{@household.id}").click
     click_on 'Add a Bill'
     fill_in 'Amount', with: '123.00'
-    fill_in 'Date', with: '12/12/2015'
-    fill_in 'Kind', with: 'electricity'
+    fill_in 'datepicker', with: '12/12/2015'
+    find(:select, "Kind").find(:option, "Electric").select_option
     click_on 'Generate Bill'
 
-    expect(page).to have_content('2015-12-12')
+    expect(page).to have_content('2015-12-01')
   end
 
   scenario 'user adds incorrect information to bill' do
