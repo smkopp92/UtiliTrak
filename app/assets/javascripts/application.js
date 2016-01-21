@@ -18,3 +18,5 @@
 
 // = require highcharts/highcharts
 // = require highcharts/highcharts-more
+
+$(function(){ $(document).foundation(); });
