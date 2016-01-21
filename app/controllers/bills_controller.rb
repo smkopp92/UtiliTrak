@@ -68,16 +68,17 @@ class BillsController < ApplicationController
       @data = Utilitydata.new(state: @household.state, kind: @bill.kind,
                               date: @bill.date, amount: 10000000)
     end
+    text = "Breakdown for #{@bill.date.month}/#{@bill.date.year}"
     @chart3 = LazyHighCharts::HighChart.new('pie') do |f|
-      f.chart({:defaultSeriesType=>"pie" , :margin=> [50, 200, 60, 170]} )
+      f.chart({ defaultSeriesType:"pie", margin: [50, 200, 60, 170] } )
       series = {
-               :type=> 'pie',
-               :name=> 'Amount($)',
-               :data=> d
+        type: 'pie',
+        name: 'Amount($)',
+        data: d
       }
       f.series(series)
-      f.options[:title][:text] = "Breakdown for #{@bill.date.month}/#{@bill.date.year}"
-      f.legend(layout: 'vertical', style: {left: 'auto', bottom: 'auto',right: '50px',top: '100px'})
+      f.options[:title][:text] = text
+      f.legend(layout: 'vertical', style: { left: 'auto', bottom: 'auto', right: '50px', top: '100px' })
       f.plot_options(pie:{
         allowPointSelect:true,
         cursor:"pointer",
