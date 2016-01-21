@@ -1,2 +1,5 @@
-<%=@bill.amount%>
+<%@bills.each do |bill|%>
+  <%=bill.amount%>
+<%end%>
 <%=@data.amount%>
+<%=high_chart("some_id", @chart3)%>
