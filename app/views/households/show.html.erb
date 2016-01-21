@@ -4,7 +4,7 @@
       <ul>
         <li><%=i+1%>.</li>
         <li><a href="/households/<%= @household.id %>/bills/<%=bill.id%>" id="bill<%=bill.id%>">
-          <%= image_tag "dollar.png"%>
+          <%= image_tag "#{bill.kind}.png"%>
         </a></li>
         <li>Date: <%= bill.date %></li>
         <li><%= link_to 'Delete Bill', household_bill_path(@household,bill.id), data: { confirm: 'Are you sure?' }, method: :delete %></li>
